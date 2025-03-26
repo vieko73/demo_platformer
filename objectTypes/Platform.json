@@ -1,0 +1,79 @@
+{
+	"name": "Platform",
+	"plugin-id": "Sprite",
+	"sid": 830638734668788,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 350405459947033
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 648296335869668
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8419826,
+						"collisionPoly": {
+							"points": [
+								0.4375,
+								0.125,
+								0.5625,
+								0.125,
+								0.96875,
+								0.25,
+								1,
+								0.375,
+								1,
+								0.75,
+								0.96875,
+								0.875,
+								0.5625,
+								1,
+								0.4375,
+								1,
+								0.03125,
+								0.875,
+								0,
+								0.75,
+								0,
+								0.375,
+								0.03125,
+								0.25
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 891114262308160,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

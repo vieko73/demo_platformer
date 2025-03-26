@@ -1,0 +1,945 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 941821242308196
+		},
+		{
+			"eventType": "variable",
+			"name": "Dead",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 414151726456134
+		},
+		{
+			"eventType": "variable",
+			"name": "NPCtext",
+			"type": "string",
+			"initialValue": "Hi",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 600190792858983
+		},
+		{
+			"eventType": "variable",
+			"name": "Go",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 887057679808782
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 925854160047731,
+					"parameters": {
+						"object": "Tomato"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Tomato",
+					"sid": 135240064903242,
+					"parameters": {
+						"animation": "\"Destroy\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 767521664950505
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Tomato",
+					"sid": 732888050421462,
+					"parameters": {
+						"animation": "\"Destroy\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Tomato",
+					"sid": 493816121814984
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 731304299051057,
+					"parameters": {
+						"variable": "Score",
+						"value": "Score+1"
+					}
+				}
+			],
+			"sid": 109473487772483
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "HERO",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 423330647023105,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 677864590036791,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 422577921874657,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 686931815118371
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 472239444867678,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 382026703170880,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 562303815035165,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 585107507548901
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 909649327597784,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 2,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 245055641652353,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 132733807404990,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 981272966278963
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 751295443623953,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 4,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 250602239265714,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 311560104293089,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 246799168617210
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 954856046245151,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 4,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 989661981062392,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 934374741548012,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 566521485725171
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 996504293431928,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 2,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 438356561003873,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 945895748790889,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 323073904980857
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 130095671140638,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 336672821623600,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 992634446952505,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 258586948838807
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Player",
+							"sid": 410431345104493,
+							"behaviorType": "Platform"
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 569280590681410,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 339409573677887,
+							"parameters": {
+								"animation": "\"Run\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 400411227367452
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "Player",
+							"sid": 432004147324193,
+							"behaviorType": "Platform"
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 682738686733947,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 137932495446537,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 875321888093845
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-jumping",
+							"objectClass": "Player",
+							"sid": 806677917658900,
+							"behaviorType": "Platform"
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 645229162053219,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 300840281878743,
+							"parameters": {
+								"animation": "\"Jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 528250675099343
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-falling",
+							"objectClass": "Player",
+							"sid": 889271096551394,
+							"behaviorType": "Platform"
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 782443089096226,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 885943156424933,
+							"parameters": {
+								"animation": "\"Fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 521126640493727
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "Player",
+							"sid": 179066831058682,
+							"behaviorType": "Platform"
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 440273791251815,
+							"parameters": {
+								"variable": "Dead"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 852081018330898,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 529785428152130
+				}
+			],
+			"sid": 789924472545729
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Death and respawn",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 461894537731006,
+							"parameters": {
+								"object": "Death"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 973826907015576,
+							"parameters": {
+								"variable": "Dead",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 168565904908562,
+							"parameters": {
+								"animation": "\"Death\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "gamepad-vibrate",
+							"objectClass": "Gamepad",
+							"sid": 582666249149609,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "35",
+								"weak-magnitude": "300",
+								"strong-magnitude": "300"
+							}
+						}
+					],
+					"sid": 414671998922966
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 612854531600785,
+							"parameters": {
+								"object": "SpikeBall"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 532735063563328,
+							"parameters": {
+								"variable": "Dead",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 549284796661401,
+							"parameters": {
+								"animation": "\"Death\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "gamepad-vibrate",
+							"objectClass": "Gamepad",
+							"sid": 484560789479201,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "35",
+								"weak-magnitude": "300",
+								"strong-magnitude": "300"
+							}
+						}
+					],
+					"sid": 925844940968562
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "Player",
+							"sid": 353682718312535,
+							"parameters": {
+								"animation": "\"Death\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Player",
+							"sid": 569072975701843,
+							"parameters": {
+								"object": "Respawn",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 721041643335905,
+							"parameters": {
+								"animation": "\"Respawn\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 211928464811451,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "Player.Health - 1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 142252461220846,
+							"parameters": {
+								"variable": "Dead",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 318689980837514
+				}
+			],
+			"sid": 698376434153999
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 194157834755687
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Scoretxt",
+					"sid": 545876687540205,
+					"parameters": {
+						"text": "\"Score: \" & Score"
+					}
+				}
+			],
+			"sid": 239993846810087
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 737289463728071
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "HPtxt",
+					"sid": 296535462857140,
+					"parameters": {
+						"text": "\"HP: \" & Player.Health"
+					}
+				}
+			],
+			"sid": 896489619939723
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 192736111946458
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "Platform",
+					"sid": 535898957075847,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "1312",
+						"time": "2",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "yes",
+						"ping-pong": "yes",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 590982486236819
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 569426984164590
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "SpikeBall",
+					"sid": 447085896000721,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetAngle",
+						"end-value": "-50",
+						"time": "2",
+						"ease": "easeinoutsine",
+						"destroy-on-complete": "no",
+						"loop": "yes",
+						"ping-pong": "yes",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 139548972859894
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 416326457415963
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 134562345567810,
+					"parameters": {
+						"object": "NPC"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "NPCtxt",
+					"sid": 233230021924370,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 384543016899415,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 206968275178985,
+							"parameters": {
+								"variable": "Score",
+								"comparison": 2,
+								"value": "30"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "NPCtxt",
+							"sid": 650953261360772,
+							"parameters": {
+								"text": "\"Give me 30 apples and I will let you in\""
+							}
+						}
+					],
+					"sid": 442529533128539
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 452598345116687,
+							"parameters": {
+								"variable": "Score",
+								"comparison": 5,
+								"value": "30"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "NPCtxt",
+							"sid": 739482985493586,
+							"parameters": {
+								"text": "\"Welcome to the next level!\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 690838920154236,
+							"parameters": {
+								"variable": "NPCtext",
+								"value": "\"Welcome\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 675418382162846,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NPC",
+							"sid": 422729352316420,
+							"parameters": {
+								"animation": "\"Win\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 746497991454476
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "NPC",
+					"sid": 680354151309100,
+					"parameters": {
+						"animation": "\"Win\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "NPC",
+					"sid": 938849808262226
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 937549187833366,
+					"parameters": {
+						"variable": "Go",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 729877964305623
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 273799073420141,
+					"parameters": {
+						"object": "Door"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 833089590214297,
+					"parameters": {
+						"variable": "Go"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 394545701231645,
+					"parameters": {
+						"layout": "Layout 2"
+					}
+				}
+			],
+			"sid": 406744579851610
+		}
+	],
+	"sid": 721835329032827
+}

@@ -1,0 +1,29 @@
+{
+	"name": "Scoretxt",
+	"plugin-id": "Spritefont2",
+	"sid": 846409352244115,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 896323605245046
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 128,
+		"height": 256,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 6110504,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

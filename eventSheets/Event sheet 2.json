@@ -1,0 +1,87 @@
+{
+	"name": "Event sheet 2",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 708603311688283
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "Finaltxt",
+					"sid": 849763787636131,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetY",
+						"end-value": "135",
+						"time": "5",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "yes",
+						"ping-pong": "yes",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 505662768520260,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 523067896819927,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 973798998195805,
+							"parameters": {
+								"layout": "Layout 1"
+							}
+						}
+					],
+					"sid": 632739561681356
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 678944581324911,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 142053914551756,
+							"parameters": {
+								"layout": "Layout 1"
+							}
+						}
+					],
+					"sid": 754200601868701
+				}
+			]
+		}
+	],
+	"sid": 542374311094402
+}
